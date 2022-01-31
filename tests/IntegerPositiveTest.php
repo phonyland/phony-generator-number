@@ -17,3 +17,7 @@ test('integerPositive() method returns a positive integer', function () {
 test('integerPositive() method returns error if $min is not positive', function () {
     🙃()->number->integerPositive(-1);
 })->throws(Error::class);
+
+test('integerPositive() method returns error if $min=0', function () {
+    🙃()->number->integerPositive(0);
+})->throws(Error::class);
