@@ -226,5 +226,18 @@ class NumberGenerator extends Generator
         return $this->floatBetween(0, $max, $precision);
     }
 
+    /**
+     * Generates a random negative float between $min and -1.
+     *
+     * @param  int  $min
+     * @param  int  $precision
+     *
+     * @return float
+     */
+    public function floatNegative(int $min = -10000, int $precision = 14): float
+    {
+        return $this->floatBetween($min, 0, $precision);
+    }
+
     // endregion
 }
