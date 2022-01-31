@@ -65,6 +65,36 @@ class NumberGenerator extends Generator
         return $this->integerBetween($min, -1);
     }
 
+    /**
+     * Generates a random integer with a number of $digits.
+     *
+     * @param  int|null   $digits  Defaults to a random digit not null
+     * @param  bool       $strict  Whether the returned number should have exactly $nbDigits
+     * @param  bool|null  $isPositive
+     *
+     * @return int
+     */
+    public function integer(int $digits = null, bool $strict = false, bool $isPositive = null): int
+    {
+        if ($digits === null) {
+            $digits = $this->digitNonZero();
+        }
+
+        $max = (10 ** $digits) - 1;
+
+        $min = $strict
+            ? 10 ** ($digits - 1)
+            : 0;
+
+        if (! isset($isPositive)) {
+            $isPositive = $this->phony->boolean->boolean;
+        }
+
+        $isPositive = $isPositive ? 1 : -1;
+
+        return $isPositive * $this->integerBetween($min, $max);
+    }
+
     // endregion
 
     // region Digits
