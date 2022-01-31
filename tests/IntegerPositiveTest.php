@@ -13,3 +13,7 @@ test('integerPositive() method returns a positive integer', function () {
 
     expect($value)->toBeGreaterThanOrEqual(1);
 });
+
+test('integerPositive() method returns error if $min is not positive', function () {
+    🙃()->number->integerPositive(-1);
+})->throws(Error::class);
