@@ -14,3 +14,16 @@ test('digit() method returns a digit', function () {
     expect($value)->toBeGreaterThanOrEqual(0);
     expect($value)->toBeLessThanOrEqual(9);
 });
+
+test('digit() method returns a digit for the given $base', function () {
+    $valueBase2 = 🙃()->number->digit(2);
+
+    expect($valueBase2)->toBeGreaterThanOrEqual(0);
+    expect($valueBase2)->toBeLessThanOrEqual(2);
+
+    $base = random_int(2, 99);
+    $value = 🙃()->number->digit($base);
+
+    expect($value)->toBeGreaterThanOrEqual(0);
+    expect($value)->toBeLessThanOrEqual($base);
+});
