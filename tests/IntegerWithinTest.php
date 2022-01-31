@@ -16,3 +16,7 @@ test('integerWithin() method returns an integer that the boundaries not included
 test('integerWithin() method returns error if $min > $max', function () {
     🙃()->number->integerWithin(2, 1);
 })->throws(Error::class);
+
+test('integerWithin() method returns error if $min === $max', function () {
+    🙃()->number->integerWithin(1, 1);
+})->throws(Error::class);
