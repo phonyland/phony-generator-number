@@ -14,6 +14,7 @@ class NumberGenerator extends Generator
      *
      * @param  int  $min
      * @param  int  $max
+     *
      * @return int
      */
     public function integerBetween(int $min = -10000, int $max = +10000): int
@@ -23,5 +24,18 @@ class NumberGenerator extends Generator
         } catch (Exception) {
             return mt_rand($min, $max);
         }
+    }
+
+    /**
+     * Generates a random integer between $min and $max without boundaries.
+     *
+     * @param  int  $min
+     * @param  int  $max
+     *
+     * @return int
+     */
+    public function integerWithin(int $min = -10000, int $max = +10000): int
+    {
+        return $this->integerBetween($min + 1, $max - 1);
     }
 }
