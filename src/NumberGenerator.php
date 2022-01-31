@@ -196,4 +196,22 @@ class NumberGenerator extends Generator
     }
 
     // endregion
+
+    // region Floats
+
+    /**
+     * Generates a random float between $min and $max.
+     *
+     * @param  float  $min
+     * @param  float  $max
+     * @param  int  $precision
+     *
+     * @return float
+     */
+    public function floatBetween(float $min = 0, float $max = 1, int $precision = 14): float
+    {
+        return (float) round(lcg_value() * ($max - $min) + $min, $precision);
+    }
+
+    // endregion
 }
