@@ -50,4 +50,16 @@ class NumberGenerator extends Generator
     {
         return $this->integerBetween(1, $max);
     }
+
+    /**
+     * Generates a random negative integer between $min and -1.
+     *
+     * @param  int  $min
+     *
+     * @return int
+     */
+    public function integerNegative(int $min = -10000): int
+    {
+        return $this->integerBetween($min, -1);
+    }
 }
