@@ -239,5 +239,34 @@ class NumberGenerator extends Generator
         return $this->floatBetween($min, 0, $precision);
     }
 
+    /**
+     * Generates a random float number between $min, $max and
+     *  with a given number of maximum decimals.
+     *
+     * @param  int|null  $leftDigits  Defaults to a random digit not null
+     * @param  int|null  $rightDigits  Maximum number of decimals
+     * @param  bool  $strict  Whether the returned number should have exactly $nbDigits
+     *
+     * @return float
+     */
+    public function float(int $leftDigits = null, int $rightDigits = null, bool $strict = false): float
+    {
+        if ($leftDigits === null) {
+            $leftDigits = $this->digitNonZero();
+        }
+
+        if ($rightDigits === null) {
+            $rightDigits = $this->digit();
+        }
+
+        $max = (10 ** $leftDigits) - 1;
+
+        $min = $strict
+            ? 10 ** ($leftDigits - 1)
+            : 0;
+
+        return $this->floatBetween($min, $max, $rightDigits);
+    }
+
     // endregion
 }
