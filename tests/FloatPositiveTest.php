@@ -19,3 +19,10 @@ test('floatPositive() method returns zero if $max=0', function () {
 
     expect($value)->toBe(0.0);
 });
+
+test('floatPositive() method returns a float with given $precision', function () {
+    $precision = random_int(0, 14);
+    $value = 🙃()->number->floatPositive(1, $precision);
+
+    expect($precision)->toBeLessThanOrEqual(strlen($value));
+});
