@@ -19,12 +19,13 @@ test('floatNormal() method calculates floats with standard deviation', function 
     $mean = array_sum($values) / (float) $n;
 
     $variance = array_reduce(
-            $values, static fn ($variance, $item) => $variance + ($item - $mean) ** 2, 0
-        ) / (float) ($n - 1);
+        $values,
+        static fn ($variance, $item) => $variance + ($item - $mean) ** 2,
+        0
+    ) / (float) ($n - 1);
 
     $std_dev = sqrt($variance);
 
     expect($mean)->toEqualWithDelta(150, 5);
     expect($std_dev)->toEqualWithDelta(100, 3);
 });
-
