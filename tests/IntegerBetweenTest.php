@@ -1,7 +1,5 @@
 <?php
 
-// region integerBetween()
-
 test('integerBetween() method returns an integer value')
     ->expect(🙃()->number->integerBetween())
     ->toBeInt();
@@ -14,5 +12,3 @@ test('integerBetween() method returns an integer between $min and $max')
 test('integerBetween() method returns error if $min > $max', function () {
     🙃()->number->integerBetween(2, 1);
 })->throws(Error::class);
-
-// endregion
