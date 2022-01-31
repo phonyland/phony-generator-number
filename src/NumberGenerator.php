@@ -109,6 +109,19 @@ class NumberGenerator extends Generator
         return str_pad($value, $digits, '0', STR_PAD_LEFT);
     }
 
+    /**
+     * Generates a random integer in a standard deviation.
+     *
+     * @param  int  $mean
+     * @param  int  $standardDeviation
+     *
+     * @return int
+     */
+    public function integerWeighted(int $mean = 10000, int $standardDeviation = 1000): int
+    {
+        return (int) $this->floatNormal($mean, $standardDeviation);
+    }
+
     // endregion
 
     // region Digits
