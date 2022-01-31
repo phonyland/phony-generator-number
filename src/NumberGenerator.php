@@ -62,4 +62,16 @@ class NumberGenerator extends Generator
     {
         return $this->integerBetween($min, -1);
     }
+
+    /**
+     * Generates a random digit for the given base.
+     *
+     * @param  int  $base
+     *
+     * @return int
+     */
+    public function digit(int $base = 10): int
+    {
+        return $this->integerBetween(0, $base - 1);
+    }
 }
