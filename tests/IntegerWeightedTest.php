@@ -21,8 +21,8 @@ test('integerWeighted() method calculates integers with standard deviation', fun
     $variance = array_reduce(
         $values,
         static function ($variance, $item) use ($mean) {
-                return $variance + ($item - $mean) ** 2;
-            },
+            return $variance + ($item - $mean) ** 2;
+        },
         0
     ) / (float) ($n - 1);
 
