@@ -18,3 +18,6 @@ test('integerNegative() method returns error if $max is not negative', function 
     🙃()->number->integerNegative(1);
 })->throws(Error::class);
 
+test('integerNegative() method returns error if $max=0', function () {
+    🙃()->number->integerNegative(0);
+})->throws(Error::class);
