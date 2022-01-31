@@ -13,3 +13,8 @@ test('integerNegative() method returns a negative integer', function () {
 
     expect($value)->toBeLessThanOrEqual(-1);
 });
+
+test('integerNegative() method returns error if $max is not negative', function () {
+    🙃()->number->integerNegative(1);
+})->throws(Error::class);
+
