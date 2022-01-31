@@ -268,5 +268,22 @@ class NumberGenerator extends Generator
         return $this->floatBetween($min, $max, $rightDigits);
     }
 
+    /**
+     * Generates a random float in a standard deviation.
+     *
+     * @param  float  $mean
+     * @param  float  $standardDeviation
+     *
+     * @return float
+     */
+    public function floatWeighted(float $mean = 50.0, float $standardDeviation = 3.0): float
+    {
+        $theta = 2 * M_PI * $this->floatBetween();
+        $rho = sqrt(-2 * log(1 - $this->floatBetween()));
+        $scale = $standardDeviation * $rho;
+
+        return $mean + $scale * cos($theta);
+    }
+
     // endregion
 }
