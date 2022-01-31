@@ -19,5 +19,5 @@ test('floatBetween() method returns a float with given $precision', function () 
     $precision = random_int(0, 14);
     $value = 🙃()->number->floatBetween(0.0, 1.0, $precision);
 
-    expect(strlen($value))->toBeLessThanOrEqual($precision + 2);
+    expect(strlen((string) $value))->toBeLessThanOrEqual($precision + 2);
 });

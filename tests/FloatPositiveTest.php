@@ -24,5 +24,5 @@ test('floatPositive() method returns a float with given $precision', function ()
     $precision = random_int(0, 14);
     $value = 🙃()->number->floatPositive(1, $precision);
 
-    expect($precision)->toBeLessThanOrEqual(strlen($value));
+    expect($precision)->toBeLessThanOrEqual(strlen((string) $value));
 });
