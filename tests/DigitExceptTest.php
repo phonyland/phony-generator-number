@@ -18,4 +18,3 @@ test('digitExcept() method returns a digit except given digit', function () {
     $value = 🙃()->number->digitExcept(1, 2);
     expect($value)->not()->toBe(1);
 });
-
