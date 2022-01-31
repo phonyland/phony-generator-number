@@ -6,6 +6,7 @@ namespace Phonyland\NumberGenerator;
 
 use Exception;
 use Phonyland\GeneratorManager\Generator;
+use RangeException;
 
 class NumberGenerator extends Generator
 {
@@ -120,6 +121,37 @@ class NumberGenerator extends Generator
     public function integerWeighted(int $mean = 10000, int $standardDeviation = 1000): int
     {
         return (int) $this->floatNormal($mean, $standardDeviation);
+    }
+
+    /**
+     * Generates a random integer except the given integer or array.
+     *
+     * @param  int|array  $except
+     * @param  int        $min
+     * @param  int        $max
+     *
+     * @return int
+     */
+    public function integerExcept(int|array $except = 666, int $min = -10000, int $max = +10000): int
+    {
+        if (is_int($except)) {
+            $except = [$except];
+        }
+
+        if (count($except) >= ($max - $min + 1)) {
+            throw new RangeException(sprintf(
+                'There are not enough integers for this range. Between %s to %s, except %s',
+                $min,
+                $max,
+                implode(', ', $except)
+            ));
+        }
+
+        do {
+            $value = $this->integerBetween($min, $max);
+        } while (in_array($value, $except, true));
+
+        return $value;
     }
 
     // endregion
