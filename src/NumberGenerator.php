@@ -9,6 +9,8 @@ use Phonyland\GeneratorManager\Generator;
 
 class NumberGenerator extends Generator
 {
+    // region Integers
+
     /**
      * Generates a random integer between $min and $max.
      *
@@ -63,6 +65,10 @@ class NumberGenerator extends Generator
         return $this->integerBetween($min, -1);
     }
 
+    // endregion
+
+    // region Digits
+
     /**
      * Generates a random digit for the given base.
      *
@@ -74,4 +80,19 @@ class NumberGenerator extends Generator
     {
         return $this->integerBetween(0, $base - 1);
     }
+
+    /**
+     * Generates a random digit for the given base except the given digit.
+     *
+     * @param  int  $except
+     * @param  int  $base
+     *
+     * @return int
+     */
+    public function digitExcept(int $except = 0, int $base = 10): int
+    {
+        return $this->integerExcept($except, 0, $base - 1);
+    }
+
+    // endregion
 }
