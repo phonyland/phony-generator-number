@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Phonyland\ExampleGenerator;
+namespace Phonyland\NumberGenerator;
 
 use Phonyland\GeneratorManager\Generator;
 
-class ExampleGenerator extends Generator
+class NumberGenerator extends Generator
 {
     /**
      * @throws \Exception
      */
     public function text(): string
     {
-        return 'example-text-'.random_int(1, 9999);
+        return 'number-text-'.random_int(1, 9999);
     }
 }
