@@ -13,7 +13,7 @@ test('integerWeighted() method calculates integers with standard deviation', fun
 
     $values = [];
     foreach (range(1, 10000) as $k => $i) {
-        $values[] = 🙃()->number->integerNormal(150, 100);
+        $values[] = 🙃()->number->integerWeighted(150, 100);
     }
 
     $mean = array_sum($values) / (float) $n;

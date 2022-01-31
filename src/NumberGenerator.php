@@ -88,7 +88,7 @@ class NumberGenerator extends Generator
             : 0;
 
         if (! isset($isPositive)) {
-            $isPositive = $this->phony->boolean->boolean;
+            $isPositive = $this->boolean();
         }
 
         $isPositive = $isPositive ? 1 : -1;
@@ -120,7 +120,7 @@ class NumberGenerator extends Generator
      */
     public function integerWeighted(int $mean = 10000, int $standardDeviation = 1000): int
     {
-        return (int) $this->floatNormal($mean, $standardDeviation);
+        return (int) $this->floatWeighted($mean, $standardDeviation);
     }
 
     /**

@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-test('floatNormal() method returns a float', function () {
-    $value = 🙃()->number->floatNormal();
+test('floatWeighted() method returns a float', function () {
+    $value = 🙃()->number->floatWeighted();
 
     expect($value)->toBeFloat();
 });
 
-test('floatNormal() method calculates floats with standard deviation', function () {
+test('floatWeighted() method calculates floats with standard deviation', function () {
     $n = 10000;
 
     $values = [];
     foreach (range(1, 10000) as $k => $i) {
-        $values[] = 🙃()->number->floatNormal(150.0, 100.0);
+        $values[] = 🙃()->number->floatWeighted(150.0, 100.0);
     }
 
     $mean = array_sum($values) / (float) $n;

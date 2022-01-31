@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 test('float() method returns a float value', function () {
     $value = 🙃()->number->float();
 
