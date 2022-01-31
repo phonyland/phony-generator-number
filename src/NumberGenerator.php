@@ -286,4 +286,24 @@ class NumberGenerator extends Generator
     }
 
     // endregion
+
+    // region Booleans
+
+    /**
+     * Generates a random boolean value whether true or false.
+     *
+     * @param  float  $truePercentage  Probability of receiving true value
+     *
+     * @return bool
+     */
+    public function boolean(float $truePercentage = 50.0): bool
+    {
+        if ($this->integerBetween(1, 100) <= $truePercentage) {
+            return true;
+        }
+
+        return false;
+    }
+
+    // endregion
 }
