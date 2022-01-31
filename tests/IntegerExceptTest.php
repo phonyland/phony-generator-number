@@ -14,3 +14,10 @@ test('integerExcept() method returns an integer except the given integer', funct
     expect($value)->toBe(1);
 });
 
+test('integerExcept() method returns an integer except the given array of integers', function () {
+    $value = 🙃()->number->integerExcept([1, 2, 3, 4], 1, 5);
+
+    expect($value)->toBe(5);
+});
+
+
