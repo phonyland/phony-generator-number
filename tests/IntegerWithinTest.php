@@ -13,3 +13,6 @@ test('integerWithin() method returns an integer that the boundaries not included
     expect($value)->toBeLessThanOrEqual(99);
 });
 
+test('integerWithin() method returns error if $min > $max', function () {
+    🙃()->number->integerWithin(2, 1);
+})->throws(Error::class);
