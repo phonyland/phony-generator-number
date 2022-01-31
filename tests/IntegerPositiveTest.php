@@ -7,3 +7,9 @@ test('integerPositive() method returns an integer value', function () {
 
     expect($value)->toBeInt();
 });
+
+test('integerPositive() method returns a positive integer', function () {
+    $value = 🙃()->number->integerPositive();
+
+    expect($value)->toBeGreaterThanOrEqual(1);
+});
