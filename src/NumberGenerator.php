@@ -38,4 +38,16 @@ class NumberGenerator extends Generator
     {
         return $this->integerBetween($min + 1, $max - 1);
     }
+
+    /**
+     * Generates a random positive integer between 1 and $max.
+     *
+     * @param  int  $max
+     *
+     * @return int
+     */
+    public function integerPositive(int $max = 10000): int
+    {
+        return $this->integerBetween(1, $max);
+    }
 }
