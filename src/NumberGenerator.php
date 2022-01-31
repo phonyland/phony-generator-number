@@ -4,15 +4,24 @@ declare(strict_types=1);
 
 namespace Phonyland\NumberGenerator;
 
+use Exception;
 use Phonyland\GeneratorManager\Generator;
 
 class NumberGenerator extends Generator
 {
     /**
-     * @throws \Exception
+     * Generates a random integer between $min and $max.
+     *
+     * @param  int  $min
+     * @param  int  $max
+     * @return int
      */
-    public function text(): string
+    public function integerBetween(int $min = -10000, int $max = +10000): int
     {
-        return 'number-text-'.random_int(1, 9999);
+        try {
+            return random_int($min, $max);
+        } catch (Exception) {
+            return mt_rand($min, $max);
+        }
     }
 }
