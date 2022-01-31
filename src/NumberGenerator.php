@@ -183,5 +183,17 @@ class NumberGenerator extends Generator
         return $this->integerExcept($except, 0, $base - 1);
     }
 
+    /**
+     * Generates a random digit for the given base but not 0.
+     *
+     * @param  int  $base
+     *
+     * @return int
+     */
+    public function digitNonZero(int $base = 10): int
+    {
+        return $this->digitExcept(0, $base);
+    }
+
     // endregion
 }
