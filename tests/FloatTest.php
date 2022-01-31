@@ -12,3 +12,10 @@ test('float() method left digit can be strictly set', function () {
 
     expect(strlen($value))->toBe($leftDigits);
 });
+
+test('float() method right digit can be strictly set', function () {
+    $rightDigits = random_int(1, 14);
+    $value = 🙃()->number->float(1, $rightDigits, true);
+
+    expect(strlen($value))->toBeLessThanOrEqual($rightDigits + 2);
+});
