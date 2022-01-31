@@ -23,6 +23,3 @@ test('integerExcept() method returns an integer except the given array of intege
 test('integerExcept() method throws a RangeException if there are not enough integers', function () {
     🙃()->number->integerExcept([1, 2, 3, 4, 5], 1, 5);
 })->throws(RangeException::class);
-
-
-
