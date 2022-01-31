@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 test('integerBetween() method returns an integer value')
     ->expect(🙃()->number->integerBetween())
     ->toBeInt();
