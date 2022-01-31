@@ -13,3 +13,9 @@ test('floatPositive() method returns a positive float', function () {
 
     expect($value)->toBeGreaterThanOrEqual(0);
 });
+
+test('floatPositive() method returns zero if $max=0', function () {
+    $value = 🙃()->number->floatPositive(0);
+
+    expect($value)->toBe(0.0);
+});
