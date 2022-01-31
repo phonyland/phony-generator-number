@@ -91,9 +91,7 @@ class NumberGenerator extends Generator
             $isPositive = $this->boolean();
         }
 
-        $isPositive = $isPositive ? 1 : -1;
-
-        return $isPositive * $this->integerBetween($min, $max);
+        return ($isPositive ? 1 : -1) * $this->integerBetween($min, $max);
     }
 
     /**
@@ -126,7 +124,7 @@ class NumberGenerator extends Generator
     /**
      * Generates a random integer except the given integer or array.
      *
-     * @param  int|array  $except
+     * @param  int|array<int>  $except
      * @param  int        $min
      * @param  int        $max
      *
@@ -210,7 +208,7 @@ class NumberGenerator extends Generator
      */
     public function floatBetween(float $min = 0, float $max = 1, int $precision = 14): float
     {
-        return (float) round(lcg_value() * ($max - $min) + $min, $precision);
+        return round(lcg_value() * ($max - $min) + $min, $precision);
     }
 
     /**
@@ -298,11 +296,7 @@ class NumberGenerator extends Generator
      */
     public function boolean(float $truePercentage = 50.0): bool
     {
-        if ($this->integerBetween(1, 100) <= $truePercentage) {
-            return true;
-        }
-
-        return false;
+        return $this->integerBetween(1, 100) <= $truePercentage;
     }
 
     // endregion
