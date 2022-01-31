@@ -213,5 +213,18 @@ class NumberGenerator extends Generator
         return (float) round(lcg_value() * ($max - $min) + $min, $precision);
     }
 
+    /**
+     * Generates a random positive float between 1 and $max.
+     *
+     * @param  int  $max
+     * @param  int  $precision
+     *
+     * @return float
+     */
+    public function floatPositive(int $max = 10000, int $precision = 14): float
+    {
+        return $this->floatBetween(0, $max, $precision);
+    }
+
     // endregion
 }
