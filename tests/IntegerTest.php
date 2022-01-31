@@ -22,7 +22,7 @@ test('integer() method returns an integer with exactly the given number of $digi
     expect(strlen((string) abs($value)))->toBeLessThanOrEqual($numberOfDigits);
 });
 
-test('integer() method returns a positive or negative integers', function () {
+test('integer() method returns positive or negative integers', function () {
     $value = 🙃()->number->integer(1, true, true);
     expect($value)->toBeGreaterThan(0);
 
