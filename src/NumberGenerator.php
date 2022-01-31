@@ -95,6 +95,20 @@ class NumberGenerator extends Generator
         return $isPositive * $this->integerBetween($min, $max);
     }
 
+    /**
+     * Generates a random integer with leading zeros.
+     *
+     * @param  int  $digits
+     *
+     * @return string
+     */
+    public function integerLeadingZero(int $digits = 10): string
+    {
+        $value = (string) $this->integer(null, false, true);
+
+        return str_pad($value, $digits, '0', STR_PAD_LEFT);
+    }
+
     // endregion
 
     // region Digits
