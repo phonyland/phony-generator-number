@@ -7,3 +7,9 @@ test('floatNegative() method returns a float value', function () {
 
     expect($value)->toBeFloat();
 });
+
+test('floatNegative() method returns a negative float', function () {
+    $value = 🙃()->number->floatNegative();
+
+    expect($value)->toBeLessThan(0);
+});
