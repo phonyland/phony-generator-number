@@ -50,9 +50,10 @@
     },
     "extra": {
         "phonyland": {
-            "generators": [
-                "Phonyland\\NumberGenerator\\NumberGenerator"
-            ]
+            "generator": {
+                "alias": "number",
+                "class": "Phonyland\\NumberGenerator\\NumberGenerator"
+            }
         }
     },
     "scripts": {
