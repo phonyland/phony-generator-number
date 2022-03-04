@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Phonyland\NumberGenerator;
 
 use Exception;
-use Phonyland\GeneratorManager\Generator;
+use Phonyland\Framework\Generator;
 use RangeException;
 
 class NumberGenerator extends Generator
