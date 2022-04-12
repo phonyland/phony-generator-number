@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Phonyland\NumberGenerator;
 
-use Exception;
 use Phonyland\Framework\Generator;
 use RangeException;
 
@@ -22,11 +21,7 @@ class NumberGenerator extends Generator
      */
     public function integerBetween(int $min = -10000, int $max = +10000): int
     {
-        try {
-            return random_int($min, $max);
-        } catch (Exception) {
-            return mt_rand($min, $max);
-        }
+        return mt_rand($min, $max);
     }
 
     /**
