@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-test('floatWeighted() method returns a float', function () {
+test('floatWeighted() method returns a float', function (): void {
     $value = 🙃()->number->floatWeighted();
 
     expect($value)->toBeFloat();
 });
 
-test('floatWeighted() method calculates floats with standard deviation', function () {
+test('floatWeighted() method calculates floats with standard deviation', function (): void {
     $n = 10000;
 
     $values = [];

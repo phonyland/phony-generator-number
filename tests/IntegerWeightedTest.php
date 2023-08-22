@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-test('integerWeighted() method returns an integer value', function () {
+test('integerWeighted() method returns an integer value', function (): void {
     $value = 🙃()->number->integerWeighted();
 
     expect($value)->toBeInt();
 });
 
-test('integerWeighted() method calculates integers with standard deviation', function () {
+test('integerWeighted() method calculates integers with standard deviation', function (): void {
     $n = 10000;
 
     $values = [];

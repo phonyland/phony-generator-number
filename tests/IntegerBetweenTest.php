@@ -11,6 +11,6 @@ test('integerBetween() method returns an integer between $min and $max')
     ->toBeGreaterThanOrEqual(1)
     ->toBeLessThanOrEqual(100);
 
-test('integerBetween() method returns error if $min > $max', function () {
+test('integerBetween() method returns error if $min > $max', function (): void {
     🙃()->number->integerBetween(2, 1);
 })->throws(Error::class);
