@@ -13,11 +13,6 @@ class NumberGenerator extends Generator
 
     /**
      * Generates a random integer between $min and $max.
-     *
-     * @param  int  $min
-     * @param  int  $max
-     *
-     * @return int
      */
     public function integerBetween(int $min = -10000, int $max = +10000): int
     {
@@ -26,11 +21,6 @@ class NumberGenerator extends Generator
 
     /**
      * Generates a random integer between $min and $max without boundaries.
-     *
-     * @param  int  $min
-     * @param  int  $max
-     *
-     * @return int
      */
     public function integerWithin(int $min = -10000, int $max = +10000): int
     {
@@ -39,10 +29,6 @@ class NumberGenerator extends Generator
 
     /**
      * Generates a random positive integer between 1 and $max.
-     *
-     * @param  int  $max
-     *
-     * @return int
      */
     public function integerPositive(int $max = 10000): int
     {
@@ -51,10 +37,6 @@ class NumberGenerator extends Generator
 
     /**
      * Generates a random negative integer between $min and -1.
-     *
-     * @param  int  $min
-     *
-     * @return int
      */
     public function integerNegative(int $min = -10000): int
     {
@@ -64,11 +46,8 @@ class NumberGenerator extends Generator
     /**
      * Generates a random integer with a number of $digits.
      *
-     * @param  int|null   $digits  Defaults to a random digit not null
-     * @param  bool       $strict  Whether the returned number should have exactly $nbDigits
-     * @param  bool|null  $isPositive
-     *
-     * @return int
+     * @param  int|null  $digits  Defaults to a random digit not null
+     * @param  bool  $strict  Whether the returned number should have exactly $nbDigits
      */
     public function integer(int $digits = null, bool $strict = false, bool $isPositive = null): int
     {
@@ -91,10 +70,6 @@ class NumberGenerator extends Generator
 
     /**
      * Generates a random integer with leading zeros.
-     *
-     * @param  int  $digits
-     *
-     * @return string
      */
     public function integerLeadingZero(int $digits = 10): string
     {
@@ -105,11 +80,6 @@ class NumberGenerator extends Generator
 
     /**
      * Generates a random integer in a standard deviation.
-     *
-     * @param  int  $mean
-     * @param  int  $standardDeviation
-     *
-     * @return int
      */
     public function integerWeighted(int $mean = 10000, int $standardDeviation = 1000): int
     {
@@ -120,10 +90,6 @@ class NumberGenerator extends Generator
      * Generates a random integer except the given integer or array.
      *
      * @param  int|array<int>  $except
-     * @param  int        $min
-     * @param  int        $max
-     *
-     * @return int
      */
     public function integerExcept(int|array $except = 666, int $min = -10000, int $max = +10000): int
     {
@@ -153,10 +119,6 @@ class NumberGenerator extends Generator
 
     /**
      * Generates a random digit for the given base.
-     *
-     * @param  int  $base
-     *
-     * @return int
      */
     public function digit(int $base = 10): int
     {
@@ -165,11 +127,6 @@ class NumberGenerator extends Generator
 
     /**
      * Generates a random digit for the given base except the given digit.
-     *
-     * @param  int  $except
-     * @param  int  $base
-     *
-     * @return int
      */
     public function digitExcept(int $except = 0, int $base = 10): int
     {
@@ -178,10 +135,6 @@ class NumberGenerator extends Generator
 
     /**
      * Generates a random digit for the given base but not 0.
-     *
-     * @param  int  $base
-     *
-     * @return int
      */
     public function digitNonZero(int $base = 10): int
     {
@@ -194,12 +147,6 @@ class NumberGenerator extends Generator
 
     /**
      * Generates a random float between $min and $max.
-     *
-     * @param  float  $min
-     * @param  float  $max
-     * @param  int  $precision
-     *
-     * @return float
      */
     public function floatBetween(float $min = 0, float $max = 1, int $precision = 14): float
     {
@@ -208,11 +155,6 @@ class NumberGenerator extends Generator
 
     /**
      * Generates a random positive float between 1 and $max.
-     *
-     * @param  int  $max
-     * @param  int  $precision
-     *
-     * @return float
      */
     public function floatPositive(int $max = 10000, int $precision = 14): float
     {
@@ -221,11 +163,6 @@ class NumberGenerator extends Generator
 
     /**
      * Generates a random negative float between $min and -1.
-     *
-     * @param  int  $min
-     * @param  int  $precision
-     *
-     * @return float
      */
     public function floatNegative(int $min = -10000, int $precision = 14): float
     {
@@ -239,8 +176,6 @@ class NumberGenerator extends Generator
      * @param  int|null  $leftDigits  Defaults to a random digit not null
      * @param  int|null  $rightDigits  Maximum number of decimals
      * @param  bool  $strict  Whether the returned number should have exactly $nbDigits
-     *
-     * @return float
      */
     public function float(int $leftDigits = null, int $rightDigits = null, bool $strict = false): float
     {
@@ -263,11 +198,6 @@ class NumberGenerator extends Generator
 
     /**
      * Generates a random float in a standard deviation.
-     *
-     * @param  float  $mean
-     * @param  float  $standardDeviation
-     *
-     * @return float
      */
     public function floatWeighted(float $mean = 50.0, float $standardDeviation = 3.0): float
     {
@@ -286,8 +216,6 @@ class NumberGenerator extends Generator
      * Generates a random boolean value whether true or false.
      *
      * @param  float  $truePercentage  Probability of receiving true value
-     *
-     * @return bool
      */
     public function boolean(float $truePercentage = 50.0): bool
     {
