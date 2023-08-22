@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Phonyland\NumberGenerator;
 
-use RangeException;
 use Phonyland\Framework\Generator;
+use RangeException;
 
 class NumberGenerator extends Generator
 {
@@ -61,7 +61,7 @@ class NumberGenerator extends Generator
             ? 10 ** ($digits - 1)
             : 0;
 
-        if (!isset($isPositive)) {
+        if (! isset($isPositive)) {
             $isPositive = $this->boolean();
         }
 
@@ -202,7 +202,7 @@ class NumberGenerator extends Generator
     public function floatWeighted(float $mean = 50.0, float $standardDeviation = 3.0): float
     {
         $theta = 2 * M_PI * $this->floatBetween();
-        $rho   = sqrt(-2 * log(1 - $this->floatBetween()));
+        $rho = sqrt(-2 * log(1 - $this->floatBetween()));
         $scale = $standardDeviation * $rho;
 
         return $mean + $scale * cos($theta);

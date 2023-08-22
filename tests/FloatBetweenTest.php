@@ -17,7 +17,7 @@ test('floatBetween() method returns a float between $min and $max', function ():
 
 test('floatBetween() method returns a float with given $precision', function (): void {
     $precision = random_int(0, 14);
-    $value     = 🙃()->number->floatBetween(0.0, 1.0, $precision);
+    $value = 🙃()->number->floatBetween(0.0, 1.0, $precision);
 
     expect(strlen((string) $value))->toBeLessThanOrEqual($precision + 2);
 });

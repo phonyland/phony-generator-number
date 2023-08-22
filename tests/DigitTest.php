@@ -21,7 +21,7 @@ test('digit() method returns a digit for the given $base', function (): void {
     expect($valueBase2)->toBeGreaterThanOrEqual(0);
     expect($valueBase2)->toBeLessThanOrEqual(2);
 
-    $base  = random_int(2, 99);
+    $base = random_int(2, 99);
     $value = 🙃()->number->digit($base);
 
     expect($value)->toBeGreaterThanOrEqual(0);

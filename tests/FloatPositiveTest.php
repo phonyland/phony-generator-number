@@ -22,7 +22,7 @@ test('floatPositive() method returns zero if $max=0', function (): void {
 
 test('floatPositive() method returns a float with given $precision', function (): void {
     $precision = random_int(0, 14);
-    $value     = 🙃()->number->floatPositive(1, $precision);
+    $value = 🙃()->number->floatPositive(1, $precision);
 
     expect($precision)->toBeLessThanOrEqual(strlen((string) $value));
 });
